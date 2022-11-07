@@ -1,7 +1,8 @@
 import * as React from "react"
-import {Link} from 'gatsby'
+import {Link, useStaticQuery, graphql} from 'gatsby'
 import Greeting from '../components/greeting'
 import Layout from '../components/layout'
+import { StaticImage } from "gatsby-plugin-image"
 
 const pageStyles = {
   color: "#232129",
@@ -143,14 +144,20 @@ const links = [
 
 
 
+
 const IndexPage = () => {
+  
   return (
     <main style={pageStyles}>
        <Layout pageTitle='Home Page'>
-        <h1 style={headingStyles}>
+        <h2 style={headingStyles}>
           Welcome to 
           <span style={headingAccentStyles}> Boca Medical Practice!</span>
-        </h1>
+        </h2>
+        <StaticImage
+          alt='Doctor looking confident'
+          src='../images/doc.jpg'
+          />
       </Layout>
      
       <Greeting name='Ryan' />
@@ -162,9 +169,10 @@ const IndexPage = () => {
 
 export default IndexPage
 
-export const Head = () => (
+export const Head = ( location, params, data, pageContext) => (
+  
   <>
-    <title>Home</title>
+    <title>Home | {pageContext}</title>
     <meta name='Boca Medical Practice' content="We are the best of the best medical practice in Boca!"/>
   </>
 )

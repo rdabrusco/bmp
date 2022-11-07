@@ -1,8 +1,7 @@
 .container{
     margin: auto;
-    max-width: 500px;
+    max-width: '100%';
     font-family: sans-serif;
-    border: 2px solid black;
 }
 
 .heading{

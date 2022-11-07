@@ -2,7 +2,9 @@ import * as React from "react"
 import {Link, useStaticQuery, graphql} from 'gatsby'
 import Greeting from '../components/greeting'
 import Layout from '../components/layout'
+import Seo from '../components/seo'
 import { StaticImage } from "gatsby-plugin-image"
+
 
 const pageStyles = {
   color: "#232129",
@@ -167,12 +169,13 @@ const IndexPage = () => {
   )
 }
 
-export default IndexPage
-
 export const Head = ( location, params, data, pageContext) => (
   
   <>
-    <title>Home | {pageContext}</title>
+    <Seo title='Home'/>
     <meta name='Boca Medical Practice' content="We are the best of the best medical practice in Boca!"/>
   </>
 )
+
+export default IndexPage
+

@@ -12,12 +12,7 @@ module.exports = {
       path: `${__dirname}/blog`
     }
     },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'test',
-        path: `${__dirname}/test`
-      }
-      }
+    'gatsby-plugin-mdx',
+    'gatsby-transformer-sharp'
   ],
 }
